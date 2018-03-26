@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "~/PycharmProjects/Flask-URN/dockerfiles/urn-flask/env/bin/python",
+    "python.linting.pylintEnabled": true
+}
