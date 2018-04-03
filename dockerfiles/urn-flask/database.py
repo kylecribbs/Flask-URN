@@ -28,7 +28,6 @@ class Database():
             for row in result:
                 print row
         """
-        queries = []
         if not self.connected:
             #open a previously closed connection
             self.connect()
