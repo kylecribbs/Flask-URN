@@ -2,10 +2,10 @@ import sqlite3
 
 class Database():
     def __init__(self, database='urn.db'):
-        #the database filename
-        self.database = database   
-        self.statement = ''   
-        self.connected = False  
+        # THE DATABASE FILENAME
+        self.database = database
+        self.statement = ''
+        self.connected = False
         self.connect()
 
     def connect(self):
@@ -71,7 +71,8 @@ class Database():
 
     def init_urns_table(self):
         query = 'CREATE TABLE IF NOT EXISTS urns' \
-        '(id INTEGER PRIMARY KEY, urn VARCHAR(50), url VARCHAR(2083), status VARCHAR(20), project_id INTEGER(16))'
+        '(id INTEGER PRIMARY KEY, urn VARCHAR(50), url VARCHAR(2083), ' \
+        'status VARCHAR(20), project_id INTEGER(16))'
         self.execute(query)
 
         query = "SELECT COUNT(*) FROM urns"
@@ -79,8 +80,8 @@ class Database():
 
         if values[0][0] <= 0:
             insert_user = ("test", "http://test.local", 000000, "complete")
-            sql = 'INSERT INTO urns (urn, url, project_id, status) values (?, ?, ?, ?)' 
+            sql = 'INSERT INTO urns (urn, url, project_id, status) values (?, ?, ?, ?)'
             self.execute(sql, insert_user)
             insert_user = ("test2", "http://test2.local", 123123, "complete")
-            sql = 'INSERT INTO urns (urn, url, project_id, status) values (?, ?, ?, ?)' 
+            sql = 'INSERT INTO urns (urn, url, project_id, status) values (?, ?, ?, ?)'
             self.execute(sql, insert_user)
